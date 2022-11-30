@@ -62,29 +62,6 @@ if (typeof(_vwo_exp[experimentId].comb_n[variationId]) !== 'undefined' && ['VISU
  
     console.log("TestId : TestName-->"+experimentId+":"+abTestName);
     console.log("VarId  : VarName-->"+variationId+":"+variationName);
-    if (variationId ==1){
-        //Avoid multiple setIntervals getting started.
-if (window.vwoInterval1669631561061) {
-	clearInterval(window.vwoInterval1669631561061);
-}
-window.vwoInterval1669631561061 = setInterval(function() {
-	if (vwo_$('body > h2').length) {
-		var text = ["Welcome", "Hi", "Sup dude"];
-var counter = 0;
-var elem = document.querySelectorAll('body > h2');
-var inst = setInterval(change, 1000);
-function change() {
-  
-  elem[0].innerHTML = text[counter];
-  counter++;
-  if (counter >= text.length) {
-    counter = 0;
-    //clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
-  }
-}
-		clearInterval(window.vwoInterval1669631561061);
-	}
-}, 1000);
 
 }
  
