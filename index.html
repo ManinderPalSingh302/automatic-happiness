@@ -33,6 +33,39 @@ I am Testing Push notifications   gg </h1>
 <!-- begin Convert Experiences code-->
 <script type="text/javascript" src="https://cdn-3.convertexperiments.com/js/10035795-10033767.js"></script>
 <!-- end Convert Experiences code -->
+<script type="text/javascript">
+
+window.VWO=window.VWO||[],window._vwo_evq=window._vwo_evq||[];
+ 
+VWO.push(['onEventReceive', 'vA', function (data) {
+
+// To fetch A/B test id
+ 
+    var experimentId = data[1];
+ 
+  // To fetch A/B test active variation name
+ 
+    var variationId = data[2];
+ 
+  // To get A/B test name
+ 
+     var abTestName= _vwo_exp[experimentId].name
+ 
+  // To get A/B test active variation name
+ 
+     var variationName= _vwo_exp[experimentId].comb_n[variationId]
+
+if (typeof(_vwo_exp[experimentId].comb_n[variationId]) !== 'undefined' && ['VISUAL_AB', 'VISUAL', 'SPLIT_URL', 'SURVEY'].indexOf(_vwo_exp[experimentId].type) > -1)
+{
+ 
+    // Write your logic here to send the data at your end
+ 
+    console.log("TestId : TestName-->"+experimentId+":"+abTestName);
+    console.log("VarId  : VarName-->"+variationId+":"+variationName);
+}
+ 
+}]);
+</script>
 
   </head>
     
